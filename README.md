@@ -24,6 +24,22 @@ In this challenge, create a web page that presents a styled list of **characters
 
 Demonstrate your understanding of this Sprint's concepts by answering free-form questions. Edit the `Answers.md` file at the root of the project to include your answer after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
+ 1: What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+is a Javascript library that is used for building interfaces and it solves problems handaling dynamic data for faster responce times . 
+
+
+2:Describe component state.
+React uses the component state to observe the changes made to the state and helps the component to behave accordingly . 
+
+
+3:Describe props.
+Props allow us to pass information into a component ! 
+
+
+4:What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+side effect is anything that affects something outside the scope , and you manage side effects by using the useEffect() hook , 
+it takes two paramemters a callback function and dependency array . 
+
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
