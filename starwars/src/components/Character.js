@@ -1,8 +1,8 @@
 // Write your Character component here
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+export default function Characters ({props}) {
 
-export default function Character (props) {
 
     const CharCard = styled.div`
         border-radius: 2px;
@@ -41,4 +41,5 @@ export default function Character (props) {
             </Qualities>
         </CharCard>
     )
-}
+    }
+    

@@ -1,10 +1,13 @@
 import React, {useState, useEffect}from 'react';
+import axios from "axios"
 import './App.css';
+import setCharacters from "./components/Character"
+import styled from "styled-components"
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [page, setPage] = useState (1);
-  const [results, setResults] = useState ([]);
+  const [ characters ,setCharacters] = useState ([]);
   const CardBox = styled.div`
   display: flex;
   justify-content: space-around;
@@ -32,11 +35,11 @@ const Subheading = styled.h3`
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   useEffect (() => {
-    axios.get(`https://swapi.py4e.com/api/planets/1/`)
-      .then(response => {
+    const SET_URL = "https://swapi.py4e.com/api/people/?format=json";
+    axios.get(SET_URL)
+      .then(function (response) {
+        setCharacters(response.data.results)
         console.log(response);
-        setResults(response.data.results);
-        
       })
       .catch (err => {
         console.log(err)
@@ -47,6 +50,9 @@ const Subheading = styled.h3`
   return (
     <div className="App">
       <h1 className="Header">"Darth Vader"</h1>
+      <Container >
+        {characters.map(characters => <Characters props={characters} />)}
+      </Container>
     </div>
   );
 }
